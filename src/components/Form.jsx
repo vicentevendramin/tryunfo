@@ -20,9 +20,10 @@ class Form extends Component {
 
     return (
       <form>
-        <label htmlFor="name">
+        <label className="label-on-top" htmlFor="name">
           Nome
           <input
+            className="input-type1"
             data-testid="name-input"
             type="text"
             name="name"
@@ -31,9 +32,10 @@ class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="description">
+        <label className="label-on-top" htmlFor="description">
           Descrição
           <textarea
+            className="input-textarea"
             data-testid="description-input"
             name="description"
             id="description"
@@ -41,9 +43,10 @@ class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="attr1">
+        <label className="label-left" htmlFor="attr1">
           Attr1
           <input
+            className="input-type2"
             data-testid="attr1-input"
             type="number"
             name="attr1"
@@ -52,9 +55,10 @@ class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="attr2">
+        <label className="label-left" htmlFor="attr2">
           Attr2
           <input
+            className="input-type2"
             data-testid="attr2-input"
             type="number"
             name="attr2"
@@ -63,9 +67,10 @@ class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="attr3">
+        <label className="label-left" htmlFor="attr3">
           Attr3
           <input
+            className="input-type2"
             data-testid="attr3-input"
             type="number"
             name="attr3"
@@ -74,9 +79,10 @@ class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="image">
+        <label className="label-left" htmlFor="image">
           Imagem
           <input
+            className="input-type2 input-image"
             data-testid="image-input"
             type="text"
             name="image"
@@ -85,9 +91,10 @@ class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-        <label htmlFor="rare">
+        <label className="label-on-top" htmlFor="rare">
           Raridade
           <select
+            className="input-type1"
             data-testid="rare-input"
             name="rare"
             id="rare"
@@ -99,26 +106,29 @@ class Form extends Component {
             <option value="muito raro">muito raro</option>
           </select>
         </label>
-        <label htmlFor="trunfo">
-          <input
-            data-testid="trunfo-input"
-            type="checkbox"
-            name="trunfo"
-            id="trunfo"
-            checked={ cardTrunfo }
-            onChange={ onInputChange }
-          />
-          Super Trybe Trunfo
-        </label>
-        <button
-          data-testid="save-button"
-          type="submit"
-          id="submit"
-          disabled={ isSaveButtonDisabled }
-          onClick={ onSaveButtonClick }
-        >
-          Salvar
-        </button>
+        <div className="submit-container">
+          <label className="label-left" htmlFor="trunfo">
+            <input
+              className="input-checkbox"
+              data-testid="trunfo-input"
+              type="checkbox"
+              name="trunfo"
+              id="trunfo"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
+            />
+            Super Trybe Trunfo
+          </label>
+          <button
+            data-testid="save-button"
+            type="submit"
+            id="submit"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+          >
+            Salvar
+          </button>
+        </div>
       </form>
     );
   }
