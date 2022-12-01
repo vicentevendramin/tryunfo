@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './components/Form';
+import Card from './components/Card';
 import logoTryunfo from './assets/logo_tryunfo.svg';
 
 class App extends React.Component {
@@ -9,6 +10,7 @@ class App extends React.Component {
         <img src={ logoTryunfo } alt="Logo Tryunfo" />
         <div>
           <Form />
+          <Card />
         </div>
       </>
     );
