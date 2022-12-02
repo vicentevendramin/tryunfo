@@ -17,15 +17,56 @@ class Card extends Component {
     const superTrunfo = <span data-testid="trunfo-card">Super Trunfo</span>;
 
     return (
-      <div>
-        <p data-testid="name-card">{ cardName }</p>
-        <img data-testid="image-card" src={ cardImage } alt={ cardName } />
-        <p data-testid="description-card">{ cardDescription }</p>
-        <p data-testid="attr1-card">{ cardAttr1 }</p>
-        <p data-testid="attr2-card">{ cardAttr2 }</p>
-        <p data-testid="attr3-card">{ cardAttr3 }</p>
-        <p data-testid="rare-card">{ cardRare }</p>
-        {cardTrunfo ? superTrunfo : ''}
+      <div className="card-preview">
+        <h2>Pré-visualização</h2>
+        <div className="card-background">
+          <div className="card-body">
+            <p className="card-name" data-testid="name-card">{ cardName }</p>
+            <img
+              className="card-image"
+              data-testid="image-card"
+              src={ cardImage }
+              alt={ cardName }
+            />
+            <p
+              className="card-description"
+              data-testid="description-card"
+            >
+              { cardDescription }
+            </p>
+            <div className="card-attrs">
+              <p data-testid="attr1-card">
+                Attr1
+                {' '}
+                ...................................................
+                {' '}
+                { cardAttr1 }
+              </p>
+              <p data-testid="attr2-card">
+                Attr2
+                {' '}
+                ...................................................
+                {' '}
+                { cardAttr2 }
+              </p>
+              <p data-testid="attr3-card">
+                Attr3
+                {' '}
+                ...................................................
+                {' '}
+                { cardAttr3 }
+              </p>
+              <p data-testid="rare-card">
+                Raridade
+                {' '}
+                .........................................
+                {' '}
+                { cardRare }
+              </p>
+              {cardTrunfo ? superTrunfo : ''}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

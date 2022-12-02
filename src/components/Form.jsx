@@ -20,6 +20,7 @@ class Form extends Component {
 
     return (
       <form>
+        <h2>Adicione nova carta</h2>
         <label className="label-on-top" htmlFor="name">
           Nome
           <input

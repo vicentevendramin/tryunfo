@@ -92,7 +92,7 @@ class App extends React.Component {
     return (
       <>
         <img src={ logoTryunfo } alt="Logo Tryunfo" />
-        <div>
+        <main>
           <Form
             onInputChange={ this.onInputChange }
             onSaveButtonClick={ this.onSaveButtonClick }
@@ -101,7 +101,7 @@ class App extends React.Component {
           <Card
             { ...this.state }
           />
-        </div>
+        </main>
       </>
     );
   }
