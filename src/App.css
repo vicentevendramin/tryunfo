@@ -4,17 +4,17 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 main {
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
-  width: 1124px;
+  display: flex;
   height: 721px;
+  justify-content: space-around;
+  margin: auto;
+  width: 1124px;
 }
 
 form {
   border-radius: 10px;
-  box-shadow: 0px 3.89311px 18.4923px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3.893px 18.492px rgba(0, 0, 0, 0.25);
   padding: 20px;
   width: 500px;
 }
@@ -96,62 +96,62 @@ form h2, .card-preview h2 {
 }
 
 .card-background {
-  width: 366px;
-  height: 558px;
+  border-radius: 9.732px;
+  box-shadow: 0 3.893px 18.492px rgba(0, 0, 0, 0.25);
   display: flex;
-  box-shadow: 0px 3.89311px 18.4923px rgba(0, 0, 0, 0.25);
-  border-radius: 9.73277px;
+  height: 558px;
+  width: 366px;
 }
 
 .card-body {
-  width: 338px;
+  background: #036b52;
+  border-radius: 9.732px;
   height: 530px;
   margin: auto;
-  background: #036B52;
-  border-radius: 9.73277px;
+  width: 338px;
 }
 
 .card-name {
-  width: 308.53px;
-  height: 38.93px;
-  background: #023031;
-  border-radius: 9.73277px 9.73277px 0px 0px;
-  margin: auto;
-  margin-top: 16px;
-  display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  background: #023031;
+  border-radius: 9.732px 9.732px 0 0;
   color: white;
+  display: flex;
+  font-size: 27.251px;
   font-style: normal;
   font-weight: 700;
-  font-size: 27.2518px;
+  height: 38.93px;
+  justify-content: flex-end;
+  margin: auto;
+  margin-top: 16px;
+  width: 308.53px;
 }
 
 .card-image {
-  width: 308.53px;
-  height: 270.57px;
   display: flex;
+  height: 270.57px;
   margin: auto;
+  width: 308.53px;
 }
 
 .card-description {
-  width: 308.53px;
   height: 54px;
   margin: auto;
   text-align: center;
+  width: 308.53px;
   word-wrap: break-word;
 }
 
 .card-attrs {
-  width: 308.53px;
-  height: 132px;
-  border-radius: 0px 0px 9.73277px 9.73277px;
+  align-items: center;
   background: white;
-  margin: auto;
+  border-radius: 0 0 9.732px 9.732px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 132px;
   justify-content: space-around;
+  margin: auto;
+  width: 308.53px;
 }
 
 .card-attrs p {
