@@ -59,7 +59,6 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      hasTrunfo,
     } = this.state;
 
     const newCard = {
@@ -71,7 +70,6 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      hasTrunfo,
     };
 
     this.setState((prev) => ({
@@ -89,18 +87,27 @@ class App extends React.Component {
   };
 
   render() {
+    const { registeredCards } = this.state;
     return (
       <>
         <img src={ logoTryunfo } alt="Logo Tryunfo" />
         <main>
-          <Form
-            onInputChange={ this.onInputChange }
-            onSaveButtonClick={ this.onSaveButtonClick }
-            { ...this.state }
-          />
-          <Card
-            { ...this.state }
-          />
+          <section className="form-section">
+            <Form
+              onInputChange={ this.onInputChange }
+              onSaveButtonClick={ this.onSaveButtonClick }
+              { ...this.state }
+            />
+            <div>
+              <h2>Pré-visualização</h2>
+              <Card
+                { ...this.state }
+              />
+            </div>
+          </section>
+          <section className="cards-section">
+            {registeredCards.map((card) => <Card key={ card.cardName } { ...card } />)}
+          </section>
         </main>
       </>
     );

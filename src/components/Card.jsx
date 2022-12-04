@@ -18,7 +18,6 @@ class Card extends Component {
 
     return (
       <div className="card-preview">
-        <h2>Pré-visualização</h2>
         <div className="card-background">
           <div className="card-body">
             <p className="card-name" data-testid="name-card">{ cardName }</p>

@@ -3,7 +3,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-main {
+.form-section {
   align-items: center;
   display: flex;
   height: 721px;
