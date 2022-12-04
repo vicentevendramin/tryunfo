@@ -12,11 +12,32 @@ class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
     } = this.props;
+
+    const trunfoCheckbox = (
+      <label className="label-left" htmlFor="trunfo">
+        <input
+          className="input-checkbox"
+          data-testid="trunfo-input"
+          type="checkbox"
+          name="cardTrunfo"
+          id="trunfo"
+          checked={ cardTrunfo }
+          onChange={ onInputChange }
+        />
+        Super Trybe Trunfo
+      </label>
+    );
+
+    const trunfoMessage = (
+      <label className="label-left" htmlFor="trunfo">
+        <p>Você já tem um Super Trunfo em seu baralho</p>
+      </label>
+    );
 
     return (
       <form>
@@ -108,18 +129,7 @@ class Form extends Component {
           </select>
         </label>
         <div className="submit-container">
-          <label className="label-left" htmlFor="trunfo">
-            <input
-              className="input-checkbox"
-              data-testid="trunfo-input"
-              type="checkbox"
-              name="cardTrunfo"
-              id="trunfo"
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-            />
-            Super Trybe Trunfo
-          </label>
+          {!hasTrunfo ? trunfoCheckbox : trunfoMessage}
           <button
             data-testid="save-button"
             type="submit"
