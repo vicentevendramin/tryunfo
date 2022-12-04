@@ -47,6 +47,12 @@ class App extends React.Component {
     this.setState({ [name]: value }, this.validationFields);
   };
 
+  trunfoValidation = () => {
+    const { registeredCards } = this.state;
+    const catchTrunfo = registeredCards.some((card) => card.cardTrunfo === true);
+    this.setState({ hasTrunfo: catchTrunfo });
+  };
+
   onSaveButtonClick = (e) => {
     e.preventDefault();
 
@@ -83,11 +89,19 @@ class App extends React.Component {
       cardRare: '',
       cardTrunfo: false,
       hasTrunfo: prev.cardTrunfo,
-    }));
+    }), this.trunfoValidation);
+  };
+
+  removeCard = ({ target: { name } }) => {
+    const { registeredCards } = this.state;
+    this.setState({
+      registeredCards: registeredCards.filter((card) => card.cardName !== name),
+    }, this.trunfoValidation);
   };
 
   render() {
     const { registeredCards } = this.state;
+
     return (
       <>
         <img src={ logoTryunfo } alt="Logo Tryunfo" />
@@ -106,7 +120,19 @@ class App extends React.Component {
             </div>
           </section>
           <section className="cards-section">
-            {registeredCards.map((card) => <Card key={ card.cardName } { ...card } />)}
+            {registeredCards.map((card) => (
+              <li key={ card.cardName }>
+                <Card { ...card } />
+                <button
+                  type="button"
+                  data-testid="delete-button"
+                  name={ card.cardName }
+                  onClick={ this.removeCard }
+                >
+                  Excluir
+                </button>
+              </li>
+            ))}
           </section>
         </main>
       </>
