@@ -104,7 +104,7 @@ class App extends React.Component {
 
     return (
       <>
-        <img src={ logoTryunfo } alt="Logo Tryunfo" />
+        <img src={ logoTryunfo } alt="Logo Tryunfo" id="tryunfo-logo" />
         <main>
           <section className="form-section">
             <Form
@@ -112,27 +112,31 @@ class App extends React.Component {
               onSaveButtonClick={ this.onSaveButtonClick }
               { ...this.state }
             />
-            <div>
+            <div className="container-preview">
               <h2>Pré-visualização</h2>
               <Card
                 { ...this.state }
               />
             </div>
           </section>
-          <section className="cards-section">
-            {registeredCards.map((card) => (
-              <li key={ card.cardName }>
-                <Card { ...card } />
-                <button
-                  type="button"
-                  data-testid="delete-button"
-                  name={ card.cardName }
-                  onClick={ this.removeCard }
-                >
-                  Excluir
-                </button>
-              </li>
-            ))}
+          <section className="registered-cards">
+            <h2>Todas as Cartas</h2>
+            <div className="cards-section">
+              {registeredCards.map((card) => (
+                <li key={ card.cardName } className="li-card">
+                  <Card { ...card } />
+                  <button
+                    type="button"
+                    data-testid="delete-button"
+                    name={ card.cardName }
+                    onClick={ this.removeCard }
+                    className="btn-delete-card"
+                  >
+                    Excluir
+                  </button>
+                </li>
+              ))}
+            </div>
           </section>
         </main>
       </>

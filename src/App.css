@@ -3,8 +3,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+body {
+  background-color: #054038;
+  text-align: center;
+}
+
 .form-section {
   align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 19px rgba(0, 0, 0, 0.8);
   display: flex;
   height: 721px;
   justify-content: space-around;
@@ -91,11 +99,18 @@ label {
   width: 360px;
 }
 
-form h2, .card-preview h2 {
+.container-preview {
   text-align: center;
 }
 
+form h2, .container-preview h2 {
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .card-background {
+  background-color: white;
   border-radius: 9.732px;
   box-shadow: 0 3.893px 18.492px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -135,6 +150,7 @@ form h2, .card-preview h2 {
 }
 
 .card-description {
+  color: white;
   height: 54px;
   margin: auto;
   text-align: center;
@@ -156,4 +172,33 @@ form h2, .card-preview h2 {
 
 .card-attrs p {
   margin: 0;
+}
+
+.registered-cards {
+  margin-top: 50px;
+}
+
+.registered-cards h2 {
+  color: white;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.li-card {
+  list-style: none;
+  text-align: center;
+}
+
+.cards-section {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  width: 1124px;
+}
+
+.btn-delete-card {
+  margin-bottom: 30px;
+  margin-top: 5px;
 }
