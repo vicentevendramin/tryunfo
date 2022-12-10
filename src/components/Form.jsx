@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Form extends Component {
+export default class Form extends Component {
   render() {
     const {
       cardName,
@@ -144,8 +144,6 @@ class Form extends Component {
     );
   }
 }
-
-export default Form;
 
 Form.propTypes = {
   cardName: PropTypes.string,

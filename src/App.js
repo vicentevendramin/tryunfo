@@ -132,7 +132,7 @@ class App extends React.Component {
             </div>
             <div className="cards-section">
               {registeredCards
-                .filter((card) => card.cardName.includes(nameFilter))
+                .filter(({ cardName }) => cardName.includes(nameFilter))
                 .map((card) => (
                   <li key={ card.cardName } className="li-card">
                     <Card { ...card } />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Card extends Component {
+export default class Card extends Component {
   render() {
     const {
       cardName,
@@ -70,8 +70,6 @@ class Card extends Component {
     );
   }
 }
-
-export default Card;
 
 Card.propTypes = {
   cardName: PropTypes.string,
