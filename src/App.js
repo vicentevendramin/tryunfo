@@ -17,6 +17,7 @@ class App extends React.Component {
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     registeredCards: [],
+    nameFilter: '',
   };
 
   validationFields = () => {
@@ -99,8 +100,12 @@ class App extends React.Component {
     }, this.trunfoValidation);
   };
 
+  handleChange = ({ target: { value } }) => {
+    this.setState({ nameFilter: value.toLowerCase() });
+  };
+
   render() {
-    const { registeredCards } = this.state;
+    const { registeredCards, nameFilter } = this.state;
 
     return (
       <>
@@ -121,21 +126,31 @@ class App extends React.Component {
           </section>
           <section className="registered-cards">
             <h2>Todas as Cartas</h2>
+            <div className="filter-cards">
+              <input
+                data-testid="name-filter"
+                type="text"
+                name="nameFilter"
+                onChange={ this.handleChange }
+              />
+            </div>
             <div className="cards-section">
-              {registeredCards.map((card) => (
-                <li key={ card.cardName } className="li-card">
-                  <Card { ...card } />
-                  <button
-                    type="button"
-                    data-testid="delete-button"
-                    name={ card.cardName }
-                    onClick={ this.removeCard }
-                    className="btn-delete-card"
-                  >
-                    Excluir
-                  </button>
-                </li>
-              ))}
+              {registeredCards
+                .filter((card) => card.cardName.toLowerCase().includes(nameFilter))
+                .map((card) => (
+                  <li key={ card.cardName } className="li-card">
+                    <Card { ...card } />
+                    <button
+                      type="button"
+                      data-testid="delete-button"
+                      name={ card.cardName }
+                      onClick={ this.removeCard }
+                      className="btn-delete-card"
+                    >
+                      Excluir
+                    </button>
+                  </li>
+                ))}
             </div>
           </section>
         </main>
