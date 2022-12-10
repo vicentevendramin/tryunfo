@@ -100,10 +100,6 @@ class App extends React.Component {
     }, this.trunfoValidation);
   };
 
-  handleChange = ({ target: { value } }) => {
-    this.setState({ nameFilter: value.toLowerCase() });
-  };
-
   render() {
     const { registeredCards, nameFilter } = this.state;
 
@@ -131,12 +127,12 @@ class App extends React.Component {
                 data-testid="name-filter"
                 type="text"
                 name="nameFilter"
-                onChange={ this.handleChange }
+                onChange={ this.onInputChange }
               />
             </div>
             <div className="cards-section">
               {registeredCards
-                .filter((card) => card.cardName.toLowerCase().includes(nameFilter))
+                .filter((card) => card.cardName.includes(nameFilter))
                 .map((card) => (
                   <li key={ card.cardName } className="li-card">
                     <Card { ...card } />
