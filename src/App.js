@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Filter from './components/Filter';
 import logoTryunfo from './assets/logo_tryunfo.svg';
 import './App.css';
 
@@ -12,12 +13,14 @@ class App extends React.Component {
     cardAttr2: '',
     cardAttr3: '',
     cardImage: '',
-    cardRare: '',
+    cardRare: 'normal',
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     registeredCards: [],
     nameFilter: '',
+    rareFilter: 'todas',
+    trunfoFilter: false,
   };
 
   validationFields = () => {
@@ -87,7 +90,7 @@ class App extends React.Component {
       cardAttr2: '0',
       cardAttr3: '0',
       cardImage: '',
-      cardRare: '',
+      cardRare: 'normal',
       cardTrunfo: false,
       hasTrunfo: prev.cardTrunfo,
     }), this.trunfoValidation);
@@ -101,7 +104,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { registeredCards, nameFilter } = this.state;
+    const { registeredCards, nameFilter, rareFilter, trunfoFilter } = this.state;
 
     return (
       <>
@@ -123,16 +126,21 @@ class App extends React.Component {
           <section className="registered-cards">
             <h2>Todas as Cartas</h2>
             <div className="filter-cards">
-              <input
-                data-testid="name-filter"
-                type="text"
-                name="nameFilter"
-                onChange={ this.onInputChange }
+              <Filter
+                onInputChange={ this.onInputChange }
+                rareFilter={ rareFilter }
+                trunfoFilter={ trunfoFilter }
               />
             </div>
             <div className="cards-section">
               {registeredCards
                 .filter(({ cardName }) => cardName.includes(nameFilter))
+                .filter(({ cardRare }) => (
+                  rareFilter === 'todas'
+                    ? cardRare !== rareFilter : cardRare === rareFilter))
+                .filter(({ cardTrunfo }) => (
+                  trunfoFilter
+                    ? cardTrunfo === true : cardTrunfo === false || cardTrunfo === true))
                 .map((card) => (
                   <li key={ card.cardName } className="li-card">
                     <Card { ...card } />
