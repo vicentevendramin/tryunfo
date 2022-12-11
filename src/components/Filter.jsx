@@ -11,6 +11,7 @@ export default class Filter extends Component {
         <label htmlFor="nameFilter">
           <input
             data-testid="name-filter"
+            disabled={ trunfoFilter }
             id="name-filter"
             type="text"
             name="nameFilter"
@@ -21,6 +22,7 @@ export default class Filter extends Component {
         <label htmlFor="rareFilter">
           <select
             data-testid="rare-filter"
+            disabled={ trunfoFilter }
             id="rare-filter"
             name="rareFilter"
             value={ rareFilter }
@@ -41,7 +43,7 @@ export default class Filter extends Component {
             checked={ trunfoFilter }
             onChange={ onInputChange }
           />
-          Super Trybe Trunfo
+          Super Trunfo
         </label>
       </form>
     );
