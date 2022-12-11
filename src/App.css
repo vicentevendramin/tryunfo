@@ -27,6 +27,14 @@ form {
   width: 500px;
 }
 
+.filter-form {
+  background-color: white;
+  box-shadow: 0 4px 19px rgba(0, 0, 0, 0.8);
+  margin: auto;
+  margin-bottom: 30px;
+  width: 1080px;
+}
+
 button {
   background-color: #2fc18c;
   border: none;
@@ -75,6 +83,16 @@ label {
   height: 37px;
   margin-left: 32px;
   width: 275px;
+}
+
+.input-type3 {
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #29313d;
+  font-size: 1.2rem;
+  height: 37px;
+  text-align: center;
+  width: 150px;
 }
 
 .input-textarea {
@@ -201,4 +219,8 @@ form h2, .container-preview h2 {
 .btn-delete-card {
   margin-bottom: 30px;
   margin-top: 5px;
+}
+
+.filter-section {
+  display: flex;
 }
